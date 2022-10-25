@@ -1,0 +1,57 @@
+# This yaml file describes the service as it appear in Datadog service catalog
+# https://app.datadoghq.eu/services?env=prod&hostGroup=&lens=Ownership
+#
+# A datadog integration crawls each repo in github/tfso for this file
+#
+# The purpose of this information is to enrich service overview.
+# This will make it easier to investigate incidences and problems for
+# Operations team, on-duty incident manager and dev teams
+#
+# As a minimum a section for main application must be defined
+# Is any other adapters known (http-client, mysql, redis, mssql ++) please add them too
+#
+# yaml schema for validation
+# https://github.com/DataDog/schema/blob/main/service-catalog/v2/schema.json
+#
+---
+schema-version: v2
+dd-service: translation.api.24sevenoffice.com
+team: ops
+contacts:
+  - type: slack
+    contact: https://24sevenofficecom.slack.com/archives/pd-ops
+repos:
+  - name: Github repo
+    provider: github
+    url: https://github.com/tfso/api-translation
+tags:
+  - "module:administration"
+  - "plattform:rancher2"
+---
+schema-version: v2
+dd-service: translation.api.24sevenoffice.com-http-client
+team: ops
+contacts:
+  - type: slack
+    contact: https://24sevenofficecom.slack.com/archives/pd-ops
+repos:
+  - name: Source
+    provider: github
+    url: https://github.com/tfso/api-translation
+tags:
+  - "module:administration"
+  - "plattform:rancher2"
+---
+schema-version: v2
+dd-service: translation.api.24sevenoffice.com-mssql
+team: ops
+contacts:
+  - type: slack
+    contact: https://24sevenofficecom.slack.com/archives/pd-ops
+repos:
+  - name: Source
+    provider: github
+    url: https://github.com/tfso/api-translation
+tags:
+  - "module:administration"
+  - "plattform:rancher2"
